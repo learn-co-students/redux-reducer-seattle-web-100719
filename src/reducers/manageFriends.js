@@ -6,23 +6,15 @@ export function manageFriends(state, action) {
         hometown: action.friend.hometown,
         id: action.friend.id
       };
-      state = {
+      return {
         friends: [...state.friends, friend]
       };
-      return state;
     case "REMOVE_FRIEND":
       let i;
-      let arr = state.friends;
-      state.friends.map((friend, index) => {
-        if (friend.id === action.id) {
-          i = index;
-          arr.splice(i, 1);
-        }
-      });
-      const res = {
+      let arr = state.friends.filter(friend => friend.id!==action.id);
+      return {
         friends: arr
       };
-      return res;
     default:
       return state;
   }

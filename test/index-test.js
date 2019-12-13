@@ -128,6 +128,11 @@ describe('manageFriends', () => {
           id: 100
         },
         {
+          name: 'Joe',
+          hometown: 'Boston',
+          id: 101
+        },
+        {
           name: 'Steven',
           hometown: 'Philadephia',
           id: 102
